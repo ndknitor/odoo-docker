@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c1e40eb9-8432-4586-aefa-69b24e4e4c55" name="ubuntu aws" url="http://13.212.116.185">
+        <fileTransfer rootFolder="/odoo" accessType="SFTP" host="13.212.116.185" port="22" sshConfigId="736c7aba-0f8d-4618-8a22-fb95df41283f" sshConfig="ubuntu@13.212.116.185:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

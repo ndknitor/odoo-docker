@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Odoo: Attach",
+      "type": "python",
+      "request": "attach",
+      "port": 8069,
+      "debugServer": 3001,
+      "host": "localhost",
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/custom/addons",
+          "remoteRoot": "/mnt/extra-addons", //path to custom addons inside docker
+        }
+      ],
+      "preLaunchTask": "docker-compose-up",
+      "postDebugTask": "docker-compose-down",
+      "logToFile": true
+    }
+  ]
+}

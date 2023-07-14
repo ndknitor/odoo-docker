@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">view.inherit.rating.purchase.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+              <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="rating_no"/>
+              </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>
+

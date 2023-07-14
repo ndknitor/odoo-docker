@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='company_action' model='ir.actions.act_window'>
+        <field name="name">Company</field>
+        <field name="res_model">company</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Company" id="company_menu" parent="library_base_menu" action="company_action"/>
+
+    <!-- Form View -->
+    <record id="company_view_form" model="ir.ui.view">
+        <field name="name">Company Form</field>
+        <field name="model">company</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="number"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="company_view_tree" model="ir.ui.view">
+        <field name="name">Company List</field>
+        <field name="model">company</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="number"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="company_view_search" model="ir.ui.view">
+        <field name="name">Company Search</field>
+        <field name="model">company</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

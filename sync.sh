@@ -1,0 +1,1 @@
+rsync -avz -e "ssh -i /home/kn/.ssh/autonsiedu.pem" $PWD/custom ubuntu@server:/odoo/custom
