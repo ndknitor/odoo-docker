@@ -1,0 +1,1 @@
+docker cp odoo-docker_odoo_1:/usr/lib/python3/dist-packages/odoo ./odoo
