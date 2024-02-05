@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='library_employee_action' model='ir.actions.act_window'>
+        <field name="name">Employee</field>
+        <field name="res_model">library.employee</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Employee" id="library_employee_menu" parent="my_library.library_base_menu" action="library_employee_action"/>
+
+    <record id="library_company_view_form" model="ir.ui.view">
+        <field name="name">Library Employee Inherit Form</field>
+        <field name="model">library.company</field>
+        <field name="inherit_id" ref="my_library.library_company_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="employee_ids">
+                        <tree editable="bottom">
+                            <field name="employee_id"/>
+                            <field name="position"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="library_employee_view_form" model="ir.ui.view">
+        <field name="name">Employee Form</field>
+        <field name="model">library.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="phone_number"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                             <field name="photo" widget="image" class="oe_avatar"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="library_employee_view_tree" model="ir.ui.view">
+        <field name="name">Employee List</field>
+        <field name="model">library.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone_number"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="library_employee_view_search" model="ir.ui.view">
+        <field name="name">Employee Search</field>
+        <field name="model">library.employee</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

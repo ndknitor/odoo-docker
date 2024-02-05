@@ -6,12 +6,13 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo
+    restart: always
     ports:
       - "5432:5432"
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
   odoo:
-    build:  
+    build:
       context: .
       dockerfile: Dockerfile
     depends_on:
@@ -20,7 +21,7 @@ services:
       - "8069:8069"
       - "8071:8071"
       - "8072:8072"
-      - "3001:3001"
+    restart: always
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=odoo
@@ -30,16 +31,12 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=odoo
       - PGPORT=5432
-      - ADDONS_PATH=/mnt/extra-addons
+      # - ADDONS_PATH=/mnt/extra-addons
       - LONGPOLLING_PORT=8072
     volumes:
       - ./custom/addons:/mnt/extra-addons
-      #- ./custom/addons:/mnt/other-addons
+      # - ./odoo.conf:/etc/odoo/odoo.conf
       - odoo-data:/var/lib/odoo
-    command: >
-       /usr/bin/python3 -m debugpy --listen 0.0.0.0:3001 /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo
 volumes:
   odoo-db-data:
   odoo-data:
-
-#python3 odoo-server/odoo-bin scaffold your_module_name custom/addons/

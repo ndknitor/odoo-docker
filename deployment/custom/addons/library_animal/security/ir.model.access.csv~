@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_book_animal,library.book_animal,model_library_animal,my_library.group_librarian,1,1,1,1
+acl_library_book_line,library.library_book_line,model_library_book_line,my_library.group_librarian,1,1,1,1

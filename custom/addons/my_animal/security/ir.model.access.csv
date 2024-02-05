@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acl_animal,animal_default,model_animal,,1,0,0,0
-acl_animal_librarian,animal_librarian,model_animal,group_librarian,1,1,1,1
